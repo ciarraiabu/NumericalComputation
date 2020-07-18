@@ -1,0 +1,15 @@
+function [fval,jac]=lorenzSysNR(X)
+    
+%variables 
+x=X(1);
+y=X(2);
+
+%define f(x)
+fval(1,1)=(x/tan(x))+y;
+fval(2,1)=(x^2)+(y^2)-12.25;
+
+%Jacobian
+jac=[(1/tan(x))-(x/(sin(x)^2)), 1; 2*x, 2*y];
+
+
+end
