@@ -1,0 +1,17 @@
+maxIter=50;
+tol=1e-9;
+oldA=A;
+A=hilb(11);
+x=norm(A,inf);
+y=norm(chol(A),inf);
+
+for i=1:maxIter
+    
+      oldA=A;
+      C=chol(A);
+      A=C*C';
+      if abs(norm(diag(A))-norm(diag(oldA)))>tol
+          break;
+      end
+end
+v=norm(diag(A));
