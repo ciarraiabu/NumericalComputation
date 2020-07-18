@@ -1,0 +1,10 @@
+clear all;
+close all;
+x=[0.5 1 1.5 2 2.5 3 3.5 4];
+y=log(x);
+
+t=(x-1)-(x.^2-2*x+1)/2;
+p=(-0.235566*x.^2+1.399845*x-1.164279);
+plot(y,x,p,x,t,x);
+title('Line ln(x), p(x) and and t(x)');
+legend({'y = ln(x)','y = p(x)', 'y=t(x)'},'Location','southwest')
